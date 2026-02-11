@@ -35,12 +35,14 @@ export default function MobileNavbar() {
         className={`w-full justify-between flex items-center ${isMenuRendered && 'bg-bg'} p-5`}
         style={{ zIndex: 101 }}
       >
-        <li className="list-none font-bold text-lg">
+        <li className="list-none">
           <Link href="/">
             <img
-              className="mr-3"
-              src="/static/logos/logo_full.svg"
-              width="160"
+              className="rounded-full"
+              src="/static/misc/profile.jpg"
+              width="45"
+              height="45"
+              alt="Kavin"
             />
           </Link>
         </li>
