@@ -5,22 +5,15 @@ import { routes } from "@/data/global";
 function Navbar({ currentPage }) {
   return (
     <nav className="flex items-center justify-between">
-      <li className="list-none font-bold text-lg cursor-pointer">
+      <li className="list-none cursor-pointer">
         <Link href="/">
-          <span className="font-black text-xl flex items-center">
-            <img
-              className="mr-2 transform hover:rotate-360 hover:scale-75 transition-transform duration-500"
-              src="/static/logos/logo_no_text.svg"
-              width="60"
-            />
-            {"BraydenTW".split("").map((letter, index) => {
-              return (
-                <span key={index} className="hover:text-fun-pink hover:-mt-2 transition-all duration-500 hover:duration-100 click:goodbyeLetterAnim">
-                  {letter}
-                </span>
-              );
-            })}
-          </span>
+          <img
+            className="rounded-full transform hover:scale-110 transition-transform duration-300"
+            src="/static/misc/profile.jpg"
+            width="50"
+            height="50"
+            alt="Kavin"
+          />
         </Link>
       </li>
       <ul className="flex items-center space-x-10">
@@ -38,6 +31,16 @@ function Navbar({ currentPage }) {
             </li>
           );
         })}
+        <li className="list-none">
+          <a
+            href="/static/files/Kavin_T_Frontend_Developer_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-fun-pink border border-fun-pink px-6 py-2 rounded"
+          >
+            Resume
+          </a>
+        </li>
       </ul>
     </nav>
   );
