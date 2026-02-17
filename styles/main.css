@@ -101,7 +101,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
-.menu > * + * {
+.menu>*+* {
   margin-top: 24px;
 }
 
@@ -273,6 +273,7 @@ pre {
     opacity: 0;
     transform: scale(4) translateY(0px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0px);
@@ -283,9 +284,11 @@ pre {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(5px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -298,6 +301,7 @@ pre {
 .heroElem .sqD:not(.squiggle-hero-pop1) {
   animation: float 2s infinite ease-in-out;
 }
+
 .heroTitle .sqD {
   @apply scale-[0.8] lg:scale-100;
 }
@@ -305,4 +309,639 @@ pre {
 /* All svg squiggle decorations */
 .sqD {
   @apply absolute z-[-10];
+}
+
+/* =============================================
+   PROJECT CARD — Ultra Premium Design v2
+   ============================================= */
+
+/* --- Keyframe Animations --- */
+
+@keyframes borderRotate {
+  0% {
+    --angle: 0deg;
+  }
+
+  100% {
+    --angle: 360deg;
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+
+  100% {
+    transform: translateX(250%) skewX(-15deg);
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes numberFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes ambientPulse {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes particleDrift1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(40px, -70px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes particleDrift2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(-50px, -80px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes particleDrift3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(30px, -90px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes neonPulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    box-shadow: 0 0 8px rgba(0, 199, 255, 0.3), 0 0 20px rgba(0, 199, 255, 0.1);
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 199, 255, 0.5), 0 0 40px rgba(0, 199, 255, 0.2);
+  }
+}
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 0 4px rgba(0, 230, 118, 0.15);
+  }
+}
+
+@keyframes titleArrow {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+/* --- Card Wrapper --- */
+
+.project-card {
+  position: relative;
+  border-radius: 22px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.015);
+  box-shadow:
+    0 0 50px rgba(0, 199, 255, 0.12),
+    0 0 100px rgba(0, 199, 255, 0.05),
+    0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Ambient Glow Behind Card --- */
+
+.project-card-ambient-glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 40px;
+  background: radial-gradient(ellipse at center,
+      rgba(0, 199, 255, 0.08) 0%,
+      rgba(100, 50, 255, 0.04) 40%,
+      transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: none;
+  animation: none;
+  filter: blur(25px);
+}
+
+.project-card:hover .project-card-ambient-glow {
+  animation: ambientPulse 3s ease-in-out infinite;
+}
+
+/* --- Animated Gradient Border --- */
+
+.project-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 1.5px;
+  background: linear-gradient(var(--angle, 0deg),
+      #00c7ff, #0066ff, #7c3aed, #00c7ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderRotate 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@supports (background: conic-gradient(red, blue)) {
+  .project-card-border {
+    background: conic-gradient(from var(--angle, 0deg),
+        #00c7ff, #0066ff, #7c3aed, #ec4899, #f97316, #00c7ff);
+  }
+}
+
+.project-card:hover .project-card-border {
+  opacity: 1;
+}
+
+/* --- Floating Particles --- */
+
+.project-card-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #00c7ff;
+  opacity: 0;
+}
+
+.project-card:hover .particle.p1 {
+  bottom: 30%;
+  left: 20%;
+  animation: particleDrift1 2.5s ease-out infinite;
+  animation-delay: 0s;
+}
+
+.project-card:hover .particle.p2 {
+  bottom: 25%;
+  left: 50%;
+  animation: particleDrift2 3s ease-out infinite;
+  animation-delay: 0.4s;
+}
+
+.project-card:hover .particle.p3 {
+  bottom: 35%;
+  left: 75%;
+  animation: particleDrift3 2.8s ease-out infinite;
+  animation-delay: 0.8s;
+}
+
+.project-card:hover .particle.p4 {
+  bottom: 20%;
+  left: 35%;
+  width: 3px;
+  height: 3px;
+  background: #7c3aed;
+  animation: particleDrift1 3.2s ease-out infinite;
+  animation-delay: 1.2s;
+}
+
+.project-card:hover .particle.p5 {
+  bottom: 40%;
+  left: 60%;
+  width: 3px;
+  height: 3px;
+  background: #ec4899;
+  animation: particleDrift2 2.6s ease-out infinite;
+  animation-delay: 0.6s;
+}
+
+/* --- Shimmer Sweep --- */
+
+.project-card-shimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.project-card-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(105deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.03) 35%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.03) 65%,
+      transparent 80%);
+  transform: translateX(-100%) skewX(-15deg);
+}
+
+.project-card:hover .project-card-shimmer::after {
+  animation: shimmerSweep 1.5s ease-in-out 0.2s;
+}
+
+/* --- Card Inner Surface --- */
+
+.project-card-inner {
+  position: relative;
+  z-index: 3;
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(160deg,
+      rgba(8, 20, 45, 0.95) 0%,
+      rgba(4, 12, 30, 0.98) 60%,
+      rgba(6, 16, 38, 0.95) 100%);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 199, 255, 0.06);
+  transition: border-color 0.5s ease, background 0.5s ease;
+}
+
+.project-card:hover .project-card-inner {
+  border-color: rgba(0, 199, 255, 0.18);
+  background: linear-gradient(160deg,
+      rgba(10, 24, 52, 0.95) 0%,
+      rgba(5, 14, 35, 0.98) 60%,
+      rgba(8, 18, 42, 0.95) 100%);
+}
+
+/* --- Image Section --- */
+
+.project-card-image-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.project-card-image-wrapper img {
+  transition: transform 0.7s cubic-bezier(0.33, 1, 0.68, 1), filter 0.5s ease;
+}
+
+.project-card:hover .project-card-image-wrapper img {
+  transform: scale(1.1);
+  filter: brightness(1.15) saturate(1.1);
+}
+
+/* Multi-layer image overlay */
+.project-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top,
+      rgba(4, 12, 30, 1) 0%,
+      rgba(4, 12, 30, 0.7) 25%,
+      rgba(4, 12, 30, 0.2) 50%,
+      transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* Subtle noise texture overlay */
+.project-card-image-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: overlay;
+}
+
+/* --- Project Number Badge --- */
+
+.project-card-number {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #00c7ff;
+  background: rgba(0, 10, 31, 0.65);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 199, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 8px;
+  text-shadow: 0 0 14px rgba(0, 199, 255, 0.7);
+  animation: pulseGlow 3s ease-in-out infinite, numberFloat 5s ease-in-out infinite;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.project-card-number-hash {
+  opacity: 0.4;
+  margin-right: 1px;
+}
+
+.project-card:hover .project-card-number {
+  border-color: rgba(0, 199, 255, 0.4);
+  background: rgba(0, 10, 31, 0.8);
+}
+
+/* --- Status Dot Indicator --- */
+
+.project-card-status {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(0, 230, 118, 0.9);
+  background: rgba(0, 10, 31, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 230, 118, 0.15);
+  padding: 4px 10px 4px 8px;
+  border-radius: 20px;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+}
+
+.project-card:hover .project-card-status {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00e676;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-text {
+  line-height: 1;
+}
+
+/* --- Content Section --- */
+
+.project-card-content {
+  padding: 20px 24px 22px;
+}
+
+/* Title with arrow */
+.project-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease, letter-spacing 0.3s ease;
+  line-height: 1.3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-card-title-arrow {
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: #00c7ff;
+}
+
+.project-card:hover .project-card-title {
+  color: #00c7ff;
+  text-shadow: 0 0 25px rgba(0, 199, 255, 0.25);
+  letter-spacing: 0.3px;
+}
+
+.project-card:hover .project-card-title-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  animation: titleArrow 1.5s ease-in-out infinite 0.3s;
+}
+
+/* Description */
+.project-card-desc {
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: #6b7a99;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-card-desc {
+  color: #8494b2;
+}
+
+/* Gradient Divider */
+.project-card-divider {
+  height: 1px;
+  margin: 14px 0;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(0, 199, 255, 0.15) 20%,
+      rgba(0, 199, 255, 0.25) 50%,
+      rgba(0, 199, 255, 0.15) 80%,
+      transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease 0.1s;
+}
+
+.project-card:hover .project-card-divider {
+  opacity: 1;
+}
+
+/* Link icons */
+.project-card-link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(0, 199, 255, 0.04);
+  border: 1px solid rgba(0, 199, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0.6;
+}
+
+.project-card:hover .project-card-link-icon {
+  opacity: 1;
+}
+
+.project-card-link-icon:hover {
+  background: rgba(0, 199, 255, 0.15);
+  border-color: rgba(0, 199, 255, 0.45);
+  box-shadow: 0 0 20px rgba(0, 199, 255, 0.2);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Glassmorphic tag pills */
+.project-tag-glass {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: rgba(0, 199, 255, 0.7);
+  background: rgba(0, 199, 255, 0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 199, 255, 0.08);
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.project-tag-glass:hover {
+  background: rgba(0, 199, 255, 0.12);
+  border-color: rgba(0, 199, 255, 0.35);
+  color: #00c7ff;
+  box-shadow: 0 0 14px rgba(0, 199, 255, 0.12), inset 0 0 8px rgba(0, 199, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* --- Neon Bottom Accent Bar --- */
+
+.project-card-neon-bar {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent,
+      #00c7ff,
+      #7c3aed,
+      #00c7ff,
+      transparent);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.15s, left 0.5s ease 0.15s, right 0.5s ease 0.15s;
+  z-index: 10;
+}
+
+.project-card:hover .project-card-neon-bar {
+  opacity: 1;
+  left: 10%;
+  right: 10%;
+  animation: neonPulse 2s ease-in-out infinite 0.5s;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+  .project-card-content {
+    padding: 16px 18px 18px;
+  }
+
+  .project-card-number {
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .project-card-status {
+    top: 10px;
+    left: 10px;
+    font-size: 9px;
+    padding: 3px 8px 3px 6px;
+  }
+
+  .project-card-particles {
+    display: none;
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
 }
