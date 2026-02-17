@@ -8,6 +8,18 @@ type Testimonial = {
   name: string,
   job: string
 };
+type FreelanceProject = {
+  id: number;
+  title: string;
+  client: string;
+  category: string;
+  duration: string;
+  description: string;
+  technologies: string[];
+  highlights: string[];
+  image?: string;
+  link?: string;
+};
 type Experience = {
   role: string,
   company: string,
@@ -115,6 +127,73 @@ export const testimonials: Testimonial[] = [
       "My vision was executed perfectly. The quality and speed of the work was excellent.",
     name: "Zach Green",
     job: "Founder of Hangxiety Shrink",
+  },
+];
+
+export const freelanceProjects: FreelanceProject[] = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    client: "Anigas Attire",
+    category: "Full-Stack Development",
+    duration: "2 months",
+    description: "Built a production-ready full-stack e-commerce platform with complete shopping flow, secure authentication, and modern UI design.",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Zustand", "JWT", "Docker", "Nginx"],
+    highlights: [
+      "Complete shopping cart and wishlist functionality",
+      "Secure JWT + OTP authentication",
+      "Mobile-first responsive design",
+      "Docker deployment with Nginx"
+    ],
+    image: "/static/projects/freelance-ecommerce.jpg",
+  },
+  {
+    id: 2,
+    title: "Business Analytics Dashboard",
+    client: "TechCorp Solutions",
+    category: "Frontend Development",
+    duration: "6 weeks",
+    description: "Developed an interactive analytics dashboard with real-time data visualization, custom charts, and comprehensive reporting features.",
+    technologies: ["React", "TypeScript", "Chart.js", "Tailwind CSS", "REST APIs"],
+    highlights: [
+      "Real-time data visualization",
+      "Custom interactive charts",
+      "Export reports functionality",
+      "Responsive admin panel"
+    ],
+    image: "/static/projects/freelance-dashboard.jpg",
+  },
+  {
+    id: 3,
+    title: "Portfolio Website Redesign",
+    client: "Creative Agency Pro",
+    category: "UI/UX & Frontend",
+    duration: "3 weeks",
+    description: "Redesigned and developed a modern portfolio website with stunning animations, smooth transitions, and an eye-catching interface.",
+    technologies: ["Next.js", "Framer Motion", "GSAP", "Tailwind CSS"],
+    highlights: [
+      "Stunning scroll animations",
+      "Interactive project showcases",
+      "SEO optimized pages",
+      "Fast load times (95+ Lighthouse)"
+    ],
+    image: "/static/projects/freelance-portfolio.jpg",
+  },
+  {
+    id: 3,
+    title: "Portfolio Website Redesign",
+    client: "Creative Agency Pro",
+    category: "UI/UX & Frontend",
+    duration: "3 weeks",
+    description: "Redesigned and developed a modern portfolio website with stunning animations, smooth transitions, and an eye-catching interface.",
+    technologies: ["Next.js", "Framer Motion", "GSAP", "Tailwind CSS"],
+    highlights: [
+      "Stunning scroll animations",
+      "Interactive project showcases",
+      "SEO optimized pages",
+      "Fast load times (95+ Lighthouse)"
+    ],
+    image: "/static/projects/freelance-portfolio.jpg",
   },
 ];
 
