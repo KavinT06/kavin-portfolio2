@@ -8,7 +8,7 @@ function FreelanceProjects() {
 
     return (
         <div className="flex flex-col text-left max-w-md md:max-w-full w-full m-auto">
-            <SectionTitle title="Freelance Projects" />
+            <SectionTitle title="Freelance Projects&nbsp;" />
             <div className="max-w-5xl m-auto grid grid-cols-1 gap-6 md:grid-cols-3">
                 {displayedProjects.map((project, index) => {
                     return (
