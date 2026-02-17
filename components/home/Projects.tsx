@@ -11,7 +11,7 @@ function Projects() {
       <div id="learnmore">
         <SectionTitle title="Here are a few of my favorite projects." />
       </div>
-      <div className="grid grid-cols-1 gap-12 md:gap-5 md:grid-cols-3 items-start">
+      <div className="grid grid-cols-1 gap-10 md:gap-8 md:grid-cols-2 lg:grid-cols-3 items-start">
         {projects.slice(0, 3).map((item) => {
           return (
             <ProjectCard key={item.id} project={item} />
