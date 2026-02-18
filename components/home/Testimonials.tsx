@@ -4,9 +4,9 @@ import { testimonials } from "@/data/content/home";
 
 function Testimonials() {
   return (
-    <div className="flex flex-col text-left max-w-md md:max-w-full w-full m-auto">
+    <div className="flex flex-col text-center lg:text-left max-w-2xl sm:max-w-4xl md:max-w-full w-full m-auto">
       <SectionTitle title="Why people love my work!" />
-      <div className="max-w-5xl m-auto md:max-h-[200px] grid grid-cols-1 gap-10 md:gap-10 md:grid-cols-3 items-start">
+      <div className="max-w-5xl m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
         {testimonials.map((item, index) => {
           return (
             <div

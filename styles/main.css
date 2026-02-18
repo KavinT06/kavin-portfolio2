@@ -35,7 +35,7 @@ body::-webkit-scrollbar-thumb {
   @apply bg-fun-pink;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .landingSectionTitle::before {
     left: 50%;
     right: auto;
@@ -943,5 +943,24 @@ pre {
 
   .project-card:hover {
     transform: translateY(-6px) scale(1.01);
+  }
+}
+
+@media (max-width: 1024px) {
+  .project-card-content {
+    padding: 18px 20px 20px;
+  }
+
+  .project-card-title {
+    font-size: 1.05rem;
+  }
+
+  .project-card-desc {
+    font-size: 0.8rem;
+  }
+
+  .project-tag-glass {
+    font-size: 0.65rem;
+    padding: 4px 10px;
   }
 }

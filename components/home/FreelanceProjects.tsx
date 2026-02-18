@@ -8,9 +8,9 @@ function FreelanceProjects() {
     const hasMoreProjects = designs.length > 3;
 
     return (
-        <div id="freelance" className="flex flex-col text-left max-w-md md:max-w-full w-full m-auto py-9 pb-14">
+        <div id="freelance" className="flex flex-col text-center xl:text-left max-w-2xl sm:max-w-3xl md:max-w-full w-full m-auto py-8 sm:py-10 pb-12 sm:pb-14">
             <SectionTitle title="Freelance Projects&nbsp;" />
-            <div className="max-w-5xl m-auto grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="max-w-5xl m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {displayedProjects.map((project, index) => {
                     return (
                         <DesignCard
@@ -29,10 +29,10 @@ function FreelanceProjects() {
 
             {/* View All Button - Only show if there are more than 3 projects */}
             {hasMoreProjects && (
-                <div className="flex justify-center mt-8">
+                <div className="flex justify-center mt-6 sm:mt-8">
                     <a
                         href="/freelance"
-                        className="group relative px-8 py-3 bg-gradient-to-r from-fun-pink to-fun-pink-light text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-fun-pink/40"
+                        className="group relative px-6 sm:px-8 py-3 bg-gradient-to-r from-fun-pink to-fun-pink-light text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-fun-pink/40"
                     >
                         <span className="relative z-10 flex items-center gap-2">
                             View All Projects
