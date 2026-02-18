@@ -8,6 +8,18 @@ type Testimonial = {
   name: string,
   job: string
 };
+type FreelanceProject = {
+  id: number;
+  title: string;
+  client: string;
+  category: string;
+  duration: string;
+  description: string;
+  technologies: string[];
+  highlights: string[];
+  image?: string;
+  link?: string;
+};
 type Experience = {
   role: string,
   company: string,

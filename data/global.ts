@@ -37,7 +37,7 @@ export const routes: Route[] = [
   },
   {
     title: "Freelance",
-    path: "/designs",
+    path: "/freelance",
   },
 ];
 
@@ -63,8 +63,8 @@ export const footer: Footer = {
           leavesWebsite: false,
         },
         {
-          name: "Designs",
-          link: "/designs",
+          name: "Freelance",
+          link: "/freelance",
           leavesWebsite: false,
         },
       ],

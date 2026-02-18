@@ -101,7 +101,7 @@ function Footer() {
               </span>
               <span>
                 <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
                   width="26"
                   title="TailwindCSS"
                 />
@@ -115,7 +115,7 @@ function Footer() {
               href="mailto:contact@braydentw.io"
               className="text-fun-gray-light font-medium"
             >
-              Brayden Wright
+              Kavin T
             </a>
             . All rights reserved.
           </div>
@@ -124,7 +124,7 @@ function Footer() {
       <div className="mt-8 text-center sm:text-right sm:-mt-12">
         <a
           className="w-auto inline-flex items-center sm:w-auto font-bold flex-shrink text-xs border border-fun-pink px-4 py-2 rounded-xl text-fun-pink cursor-pointer opacity-50"
-          href="https://github.com/braydentw/braydentw.io"
+          href="https://github.com/KavinT06/kavin-portfolio2"
           target="_blank"
           rel="nooreferrer"
         >
