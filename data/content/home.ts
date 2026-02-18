@@ -167,7 +167,6 @@ export const experiences: Experience[] = [
       "Built a production-ready full-stack e-commerce platform using Next.js and Tailwind CSS, focusing on scalable architecture and clean component design.",
       "Developed complete shopping flow including product catalog, size variants, cart management(Zustand), wishlist, and checkout system.",
       "Implemented secure authentication using JWT + OTP - based login, with protected routes and persistent session handling.",
-      "Designed a fully responsive, mobile- first UI with dynamic theme support and reusable component structure.",
       "Integrated backend APIs for real - time product data, inventory handling, and user - based operations.",
       "Structured state management efficiently to ensure smooth cart updates, quantity control, and localStorage persistence.",
       "Optimized performance with SSR capabilities in Next.js and improved SEO using metadata strategies.",

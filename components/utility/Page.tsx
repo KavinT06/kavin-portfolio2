@@ -90,7 +90,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         }}
       ></noscript>
 
-      <header className="fixed top-0 left-0 w-full z-50 py-2 bg-bg/90 backdrop-blur border-b border-fun-pink-darker/40">
+      <header className="fixed top-0 left-0 w-full z-50 py-2 bg-bg/90 backdrop-blur border-b border-bg">
         <div className="w-full max-w-[1200px] m-auto px-5">
           <div className="hidden sm:block">
             <Navbar currentPage={currentPage} />
