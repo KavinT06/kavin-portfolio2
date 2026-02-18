@@ -4,7 +4,7 @@ import SectionTitle from "../global/SectionTitle";
 
 function Skills() {
   return (
-    <div className="py-10 pt-20">
+    <div id="skills" className="py-10 pt-20">
       <div className="text-center md:text-left">
                 <SectionTitle title="Skills&nbsp;" />
             </div>

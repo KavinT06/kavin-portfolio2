@@ -90,13 +90,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         }}
       ></noscript>
 
-      <main className="p-5 w-full flex-1 text-center">
-        <div className="hidden sm:block z-100">
-          <Navbar currentPage={currentPage} />
+      <header className="fixed top-0 left-0 w-full z-50 py-2 bg-bg/90 backdrop-blur border-b border-fun-pink-darker/40">
+        <div className="w-full max-w-[1200px] m-auto px-5">
+          <div className="hidden sm:block">
+            <Navbar currentPage={currentPage} />
+          </div>
+          <div className="block sm:hidden">
+            <MobileNavbar />
+          </div>
         </div>
-        <div className="-m-5 block sm:hidden z-100">
-          <MobileNavbar />
-        </div>
+      </header>
+      <main className="p-5 pt-24 sm:pt-28 w-full flex-1 text-center">
         {children}
       </main>
       <Footer />

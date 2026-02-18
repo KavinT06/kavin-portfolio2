@@ -1,8 +1,11 @@
 import Link from "next/link";
 import React from "react";
+import { Link as ScrollLink } from "react-scroll";
 import { routes } from "@/data/global";
+import ResumeButton from "./ResumeButton";
 
 function Navbar({ currentPage }) {
+  const scrollOffset = -100;
   return (
     <nav className="flex items-center justify-between">
       <li className="list-none cursor-pointer">
@@ -18,6 +21,8 @@ function Navbar({ currentPage }) {
       </li>
       <ul className="flex items-center space-x-10">
         {routes.map((item, index) => {
+          const isAnchor = item.path.startsWith("#");
+          const target = isAnchor ? item.path.slice(1) : item.path;
           return (
             <li
               key={index}
@@ -27,19 +32,25 @@ function Navbar({ currentPage }) {
                   : "opacity-40 hover:opacity-100 transition-opacity"
               }`}
             >
-              <Link href={item.path}>{item.title}</Link>
+              {isAnchor ? (
+                <ScrollLink
+                  to={target}
+                  spy={true}
+                  smooth={true}
+                  offset={scrollOffset}
+                  duration={500}
+                  className="cursor-pointer"
+                >
+                  {item.title}
+                </ScrollLink>
+              ) : (
+                <Link href={item.path}>{item.title}</Link>
+              )}
             </li>
           );
         })}
         <li className="list-none">
-          <a
-            href="/static/files/Kavin_T_Frontend_Developer_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-fun-pink border border-fun-pink px-6 py-2 rounded"
-          >
-            Resume
-          </a>
+          <ResumeButton />
         </li>
       </ul>
     </nav>

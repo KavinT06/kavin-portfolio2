@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { footer } from "@/data/global";
 import Image from "next/image";
+import ResumeButton from "./ResumeButton";
 
 function Footer() {
   return (
@@ -58,7 +59,7 @@ function Footer() {
                 </a>
               </div>
             )}
-            {footer.support.paypal !== "" && (
+            {/* {footer.support.paypal !== "" && (
               <div>
                 <a
                   href={`https://paypal.me/${footer.support.paypal}`}
@@ -70,7 +71,8 @@ function Footer() {
                   />
                 </a>
               </div>
-            )}
+            )} */}
+              <ResumeButton  className="px-14 rounded-lg font-bold"/>
             <p className="text-fun-gray text-xs pt-1">
               {footer.support.message}
             </p>
