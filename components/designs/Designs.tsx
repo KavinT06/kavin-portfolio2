@@ -86,7 +86,7 @@ export function DesignCard({ item }: { item: DesignCardItem }) {
 function Designs() {
   return (
     <div className="w-full">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 items-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
         {designs.map((item, index) => {
           return (
             <DesignCard key={index} item={item} />

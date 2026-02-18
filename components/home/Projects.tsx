@@ -7,11 +7,11 @@ import ProjectCard from "../projects/ProjectCard";
 
 function Projects() {
   return (
-    <div id="projects" className="flex flex-col text-left justify-between py-5 relative">
+    <div id="projects" className="flex flex-col text-center xl:text-left justify-between py-6 sm:py-8 md:py-10 relative">
       <div id="learnmore">
         <SectionTitle title="Here are a few of my favorite projects." />
       </div>
-      <div className="grid grid-cols-1 gap-10 md:gap-8 md:grid-cols-2 lg:grid-cols-3 items-start">
+      <div className="grid grid-cols-1 gap-8 sm:gap-10 md:gap-8 md:grid-cols-2 lg:grid-cols-3 items-start">
         {projects.slice(0, 3).map((item) => {
           return (
             <ProjectCard key={item.id} project={item} />
@@ -20,7 +20,7 @@ function Projects() {
       </div>
       <div className="relative w-full mt-2">
         <Link href="/projects">
-          <div className="mt-8 max-w-sm md:max-w-2xl border border-fun-pink mx-auto text-center w-full whitespace-nowrap px-8 py-3 rounded-full text-fun-pink bg-fun-pink-darkerer hover:bg-fun-pink hover:text-white transition-colors cursor-pointer">
+          <div className="mt-6 sm:mt-8 max-w-sm md:max-w-xl lg:max-w-2xl border border-fun-pink mx-auto text-center w-full whitespace-nowrap px-6 sm:px-8 py-3 rounded-full text-fun-pink bg-fun-pink-darkerer hover:bg-fun-pink hover:text-white transition-colors cursor-pointer">
             View All
           </div>
         </Link>

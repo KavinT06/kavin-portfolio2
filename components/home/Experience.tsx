@@ -4,25 +4,25 @@ import { experiences } from "@/data/content/home";
 
 function Experience() {
     return (
-        <section id="experience" className="w-full pb-5">
-            <div className="text-center md:text-left">
+        <section id="experience" className="w-full pb-6 sm:pb-8">
+            <div className="text-center xl:text-left">
                 <SectionTitle title="Experience" />
                 {/* <p className="text-sm text-fun-gray max-w-2xl mx-auto md:mx-0 -mt-6">
                     Focused on clean UI systems, fast iteration, and delightful product
                     experiences.
                 </p> */}
             </div>
-            <div className="grid gap-6 md:gap-8 md:grid-cols-2">
+            <div className="grid gap-5 sm:gap-6 md:gap-7 md:grid-cols-2">
                 {experiences.map((item, index) => {
                     return (
                         <article
                             key={`${item.company}-${item.period}-${index}`}
                             className="relative rounded-2xl p-[1px] bg-gradient-to-br from-fun-pink-light/60 via-fun-pink-darker to-fun-pink-dark"
                         >
-                            <div className="relative h-full rounded-2xl bg-fun-pink-darker/80 p-6 border border-fun-pink-darkest">
-                                <div className="flex items-start justify-between gap-4">
+                            <div className="relative h-full rounded-2xl bg-fun-pink-darker/80 p-5 sm:p-6 md:p-5 border border-fun-pink-darkest">
+                                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
                                     <div>
-                                        <h3 className="text-lg font-semibold text-white">
+                                        <h3 className="text-base sm:text-lg md:text-lg font-semibold text-white">
                                             {item.role}
                                         </h3>
                                         <p className="text-sm text-fun-pink font-semibold">
@@ -32,12 +32,12 @@ function Experience() {
                                             {item.location}
                                         </p>
                                     </div>
-                                    <span className="text-xs text-fun-gray border border-fun-gray-medium px-3 py-1 rounded-full">
+                                    <span className="text-xs text-fun-gray border border-fun-gray-medium px-3 py-1 rounded-full self-start sm:self-auto">
                                         {item.period}
                                     </span>
                                 </div>
 
-                                <ul className="mt-4 space-y-3 text-sm text-justify text-fun-gray">
+                                <ul className="mt-4 space-y-3 text-[13px] sm:text-sm md:text-sm text-left sm:text-justify text-fun-gray">
                                     {item.highlights.map((point, pointIndex) => {
                                         return (
                                             <li
@@ -56,7 +56,7 @@ function Experience() {
                                         return (
                                             <span
                                                 key={`${item.company}-stack-${stackIndex}`}
-                                                className="text-xs text-white/80 border border-fun-pink-dark px-3 py-1 rounded-full"
+                                                className="text-[11px] sm:text-xs text-white/80 border border-fun-pink-dark px-3 py-1 rounded-full"
                                             >
                                                 {stackItem}
                                             </span>

@@ -6,11 +6,11 @@ import ResumeButton from "./ResumeButton";
 
 function Footer() {
   return (
-    <footer className="flex flex-col w-screen px-5 py-10 border-t border-fun-pink-darker z-5 bg-bg">
-      <div className="w-full max-w-4xl m-auto grid grid-cols-2 sm:grid-cols-3 justify-between items-start">
+    <footer className="flex flex-col w-screen px-4 sm:px-5 py-10 border-t border-fun-pink-darker z-5 bg-bg">
+      <div className="w-full max-w-4xl m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 md:gap-0 justify-between items-start">
         {footer.columns.map((item, index) => {
           return (
-            <div key={index} className="text-left mb-5 sm:mb-0">
+            <div key={index} className="text-center sm:text-left">
               <h4 className="uppercase text-fun-gray text-sm font-bold">
                 {item.title}
               </h4>
@@ -22,7 +22,7 @@ function Footer() {
                         <a
                           href={item.link}
                           target="_blank"
-                          className="items-center flex"
+                          className="items-center flex justify-center sm:justify-start"
                         >
                           {item.icon && (
                             <span className="pr-2 -mb-1">
@@ -32,7 +32,11 @@ function Footer() {
                           {item.name}
                         </a>
                       ) : (
-                        <Link href={item.link}>{item.name}</Link>
+                        <Link href={item.link}>
+                          <a className="inline-flex justify-center sm:justify-start">
+                            {item.name}
+                          </a>
+                        </Link>
                       )}
                     </div>
                   );
@@ -41,38 +45,38 @@ function Footer() {
             </div>
           );
         })}
-        <div className="text-center col-span-2 sm:col-auto sm:text-left pt-8 sm:mt-0 sm:pt-0 text-fun-gray border-t border-fun-pink-dark sm:border-0">
+        <div className="text-center sm:text-left pt-8 sm:mt-0 sm:pt-0 text-fun-gray border-t border-fun-pink-dark sm:border-0">
           <h4 className="uppercase text-fun-gray text-sm font-bold">
             Support My Work
           </h4>
           <div className="space-y-2 mt-4 w-full flex items-center sm:items-start flex-col">
             {footer.support.buymeacoffee !== "" && (
               <div>
-                <a
-                  href={`https://buymeacoffee.com/${footer.support.buymeacoffee}`}
-                  target="_blank"
-                >
-                  <img
-                    src="/static/misc/buy-me-a-coffee.svg"
-                    className="h-12 mr-2 hover:opacity-80 opacity-100 transition-opacity"
-                  />
-                </a>
+              <a
+                href={`https://buymeacoffee.com/${footer.support.buymeacoffee}`}
+                target="_blank"
+              >
+                <img
+                src="/static/misc/buy-me-a-coffee.svg"
+                className="h-10 mr-2 hover:opacity-80 opacity-100 transition-opacity"
+                />
+              </a>
               </div>
             )}
             {/* {footer.support.paypal !== "" && (
               <div>
-                <a
-                  href={`https://paypal.me/${footer.support.paypal}`}
-                  target="_blank"
-                >
-                  <img
-                    src="/static/misc/paypal.svg"
-                    className="h-12 mr-2 hover:opacity-80 opacity-100 transition-opacity"
-                  />
-                </a>
+              <a
+                href={`https://paypal.me/${footer.support.paypal}`}
+                target="_blank"
+              >
+                <img
+                src="/static/misc/paypal.svg"
+                className="h-10 mr-2 hover:opacity-80 opacity-100 transition-opacity"
+                />
+              </a>
               </div>
             )} */}
-              <ResumeButton  className="px-14 rounded-lg font-bold"/>
+            <ResumeButton className="px-14 py-2.5 rounded-lg font-bold h-10 flex items-center"/>
             <p className="text-fun-gray text-xs pt-1">
               {footer.support.message}
             </p>
