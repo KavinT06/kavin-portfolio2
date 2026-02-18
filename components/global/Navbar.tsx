@@ -13,8 +13,8 @@ function Navbar({ currentPage }) {
           <img
             className="rounded-full transform hover:scale-110 transition-transform duration-300"
             src="/static/misc/profile.jpg"
-            width="50"
-            height="50"
+            width="48"
+            height="48"
             alt="Kavin"
           />
         </Link>
