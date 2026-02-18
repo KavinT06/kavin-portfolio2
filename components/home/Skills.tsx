@@ -4,10 +4,10 @@ import SectionTitle from "../global/SectionTitle";
 
 function Skills() {
   return (
-    <div className="py-10 pt-20">
-      <div className="text-center md:text-left">
-                <SectionTitle title="Skills&nbsp;" />
-            </div>
+    <div id="skills" className="py-10 pt-14">
+      <div className="text-center md:text-left pb-5">
+        <SectionTitle title="Skills&nbsp;" />
+      </div>
       <div className="flex flex-col md:flex-row justify-between relative">
         <h2 className="relative text-3xl w-full text-center md:text-left font-bold md:max-w-lg mb-10 md:mr-10 md:mb-0 md:w-max mr-0 ">
           I got the experience.

@@ -3,7 +3,7 @@ import SectionTitle from "../global/SectionTitle";
 
 function CTA() {
   return (
-    <div className="py-4 relative w-full">
+    <div id="contact" className="py-4 relative w-full">
       <SectionTitle title="Contact&nbsp;&nbsp;" />
       <img className="w-30 m-auto mb-2" src="/static/doodles/lineBreak.svg" />
       <div className="pt-14 pb-40">

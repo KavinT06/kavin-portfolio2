@@ -4,7 +4,7 @@ import { experiences } from "@/data/content/home";
 
 function Experience() {
     return (
-        <section className="w-full">
+        <section id="experience" className="w-full pb-5">
             <div className="text-center md:text-left">
                 <SectionTitle title="Experience" />
                 {/* <p className="text-sm text-fun-gray max-w-2xl mx-auto md:mx-0 -mt-6">

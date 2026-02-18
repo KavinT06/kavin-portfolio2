@@ -2,15 +2,28 @@ import Footer from "../global/Footer";
 import Head from "next/head";
 import MobileNavbar from "../global/MobileNavbar";
 import Navbar from "../global/Navbar";
-import React, { ReactChildren } from "react";
+import React, { ReactChildren, useEffect, useState } from "react";
 
 function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
-  const pageTitle = `${
-    currentPage === "Home"
+  const [isNavScrolled, setIsNavScrolled] = useState(false);
+  const pageTitle = `${currentPage === "Home"
       ? "Kavin T - Web Developer, Designer."
       : `${currentPage} - Kavin T`
-  }`;
+    }`;
   console.log(currentPage);
+
+  useEffect(() => {
+    function handleScroll() {
+      setIsNavScrolled(window.scrollY > 10);
+    }
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div
       className="w-full m-auto flex flex-col items-center justify-center min-h-screen opening-box-animate-paddin text-white overflow-hidden md:overflow-visible"
@@ -90,13 +103,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         }}
       ></noscript>
 
-      <main className="p-5 w-full flex-1 text-center">
-        <div className="hidden sm:block z-100">
-          <Navbar currentPage={currentPage} />
+      <header
+        className={`fixed top-0 left-0 w-full z-50 py-2 transition-colors duration-300 ${isNavScrolled ? "bg-bg/90 backdrop-blur" : "bg-transparent"
+          }`}
+      >
+        <div className="w-full max-w-[1200px] m-auto px-5">
+          <div className="hidden sm:block">
+            <Navbar currentPage={currentPage} />
+          </div>
+          <div className="block sm:hidden">
+            <MobileNavbar />
+          </div>
         </div>
-        <div className="-m-5 block sm:hidden z-100">
-          <MobileNavbar />
-        </div>
+      </header>
+      <main className="p-5 pt-24 sm:pt-28 w-full flex-1 text-center">
         {children}
       </main>
       <Footer />

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
-import {routes} from "@/data/global";
+import { Link as ScrollLink } from "react-scroll";
+import { routes } from "@/data/global";
 
 export default function MobileNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const scrollOffset = -100;
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
     isMenuOpen,
     {
@@ -21,6 +23,11 @@ export default function MobileNavbar() {
       setIsMenuOpen(true);
       document.body.style.overflow = "hidden";
     }
+  }
+
+  function handleNavClick() {
+    setIsMenuOpen(false);
+    document.body.style.overflow = "";
   }
 
   useEffect(() => {
@@ -62,14 +69,33 @@ export default function MobileNavbar() {
             ${isMenuRendered && "menuRendered"}`}
         >
           {routes.map((item, index) => {
+            const isAnchor = item.path.startsWith("#");
+            const target = isAnchor ? item.path.slice(1) : item.path;
             return (
               <li
+                key={item.title}
                 className="border-b border-gray-900 text-gray-100 text-sm font-semibold"
                 style={{ transitionDelay: `${150 + index * 25}ms` }}
               >
-                <Link href={item.path}>
-                  <a className="flex w-auto pb-4">{item.title}</a>
-                </Link>
+                {isAnchor ? (
+                  <ScrollLink
+                    to={target}
+                    spy={true}
+                    smooth={true}
+                    offset={scrollOffset}
+                    duration={500}
+                    className="flex w-auto pb-4 cursor-pointer"
+                    onClick={handleNavClick}
+                  >
+                    {item.title}
+                  </ScrollLink>
+                ) : (
+                  <Link href={item.path}>
+                    <a className="flex w-auto pb-4" onClick={handleNavClick}>
+                      {item.title}
+                    </a>
+                  </Link>
+                )}
               </li>
             );
           })}

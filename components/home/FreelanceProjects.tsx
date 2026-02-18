@@ -8,7 +8,7 @@ function FreelanceProjects() {
     const hasMoreProjects = designs.length > 3;
 
     return (
-        <div className="flex flex-col text-left max-w-md md:max-w-full w-full m-auto">
+        <div id="freelance" className="flex flex-col text-left max-w-md md:max-w-full w-full m-auto py-9 pb-14">
             <SectionTitle title="Freelance Projects&nbsp;" />
             <div className="max-w-5xl m-auto grid grid-cols-1 gap-6 md:grid-cols-3">
                 {displayedProjects.map((project, index) => {

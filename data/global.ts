@@ -25,20 +25,28 @@ type Footer = {
 export const routes: Route[] = [
   {
     title: "Home",
-    path: "/",
+    path: "#home",
   },
-  // {
-  //   title: "Blog",
-  //   path: "/blog",
-  // },
+  {
+    title: "Skills",
+    path: "#skills",
+  },
+  {
+    title: "Experience",
+    path: "#experience",
+  },
   {
     title: "Projects",
-    path: "/projects",
+    path: "#projects",
   },
   {
     title: "Freelance",
-    path: "/freelance",
+    path: "#freelance",
   },
+  {
+    title: "Contact",
+    path: "#contact",
+  }
 ];
 
 
@@ -74,26 +82,14 @@ export const footer: Footer = {
       links: [
         {
           name: "GitHub",
-          link: "https://github.com/braydentw",
+          link: "https://github.com/KavinT06",
           icon: "/static/icons/github-f.svg",
           leavesWebsite: true,
         },
         {
           name: "LinkedIn",
-          link: "https://www.linkedin.com/in/braydentw/",
+          link: "https://www.linkedin.com/in/kavint6/",
           icon: "/static/icons/linkedin-f.svg",
-          leavesWebsite: true,
-        },
-        {
-          name: "Dribbble",
-          link: "https://dribbble.com/braydentw",
-          icon: "/static/icons/dribbble-f.svg",
-          leavesWebsite: true,
-        },
-        {
-          name: "IndieHackers",
-          link: "https://indiehackers.com/braydentw",
-          icon: "/static/icons/indiehackers-f.svg",
           leavesWebsite: true,
         },
         {
@@ -106,8 +102,8 @@ export const footer: Footer = {
     },
   ],
   support: {
-    buymeacoffee: "braydenw",
-    paypal: "braydentw",
+    buymeacoffee: "kavint",
+    paypal: "",
     message: "I appreciate your support very much! 💙",
   },
 };
