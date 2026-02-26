@@ -84,7 +84,7 @@ function Footer() {
         </div>
       </div>
       <div className="max-w-4xl w-full m-auto mt-8 pt-8 sm:mt-4 sm:pt-4 text-center text-fun-gray border-t border-fun-pink-dark">
-        <p className="flex flex-col items-center justify-center ">
+        <div className="flex flex-col items-center justify-center ">
           <div className="inline-flex items-center uppercase text-xs font-bold tracking-widest">
             Made with{" "}
             <div className="space-x-2 inline-flex items-center -mt-1 ml-3">
@@ -125,14 +125,14 @@ function Footer() {
             </a>
             . All rights reserved.
           </div>
-        </p>
+        </div>
       </div>
       <div className="mt-8 text-center sm:text-right sm:-mt-12">
         <a
           className="w-auto inline-flex items-center sm:w-auto font-bold flex-shrink text-xs border border-fun-pink px-4 py-2 rounded-xl text-fun-pink cursor-pointer opacity-50"
           href="https://github.com/KavinT06/kavin-portfolio2"
           target="_blank"
-          rel="nooreferrer"
+          rel="noreferrer"
         >
           <Image
             src="/static/icons/github.svg"
