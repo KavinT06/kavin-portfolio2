@@ -6,11 +6,11 @@ import React, { ReactChildren, useEffect, useState } from "react";
 
 function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
   const [isNavScrolled, setIsNavScrolled] = useState(false);
+  const analyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
   const pageTitle = `${currentPage === "Home"
       ? "Kavin T - Web Developer, Designer."
       : `${currentPage} - Kavin T`
     }`;
-  console.log(currentPage);
 
   useEffect(() => {
     function handleScroll() {
@@ -70,10 +70,12 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
           property="twitter:image"
           content="https://kavint.tech/static/images/mee.jpeg"
         ></meta>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-        />
+        {analyticsId && (
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}
+          />
+        )}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -83,18 +85,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KC3CN7V');`,
           }}
         ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-                page_path: window.location.pathname,
-              });
-          `,
-          }}
-        />
+        {analyticsId && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${analyticsId}', {
+                  page_path: window.location.pathname,
+                });
+            `,
+            }}
+          />
+        )}
       </Head>
       <noscript
         dangerouslySetInnerHTML={{

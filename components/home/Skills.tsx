@@ -5,7 +5,7 @@ import SectionTitle from "../global/SectionTitle";
 function Skills() {
   return (
     <div id="skills" className="py-8 sm:py-10 pt-10 sm:pt-14">
-      <div className="text-center xl:text-left pb-4 sm:pb-5">
+      <div className="text-center xl:text-left pb-4 pt-1 sm:pb-5">
         <SectionTitle title="Skills&nbsp;" />
       </div>
       <div className="flex flex-col xl:flex-row justify-between relative">

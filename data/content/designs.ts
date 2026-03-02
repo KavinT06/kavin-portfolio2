@@ -10,17 +10,17 @@ export const designs: Design[] = [
   {
     label: "Anigas Attire",
     category: "E-commerce Fashion",
-    description: "Leading modeling agency in Tamil Nadu breaking stereotypes in fashion",
-    img: "/static/designs/mobile-shopping-app.jpg",
-    link: "https://dribbble.com/shots/9458498-Mobile-Shopping-App",
+    description: "Anigas Attire is a modern fashion web app built with Next.js.It features Docker deployment and a scalable architecture.",
+    img: "/static/designs/anigasattire.png",
+    link: "https://anigasattire.kavint.tech/",
   },
-  // {
-  //   label: "Healing Crystals",
-  //   category: "Wellness Store",
-  //   description: "E-commerce platform for crystal healing and spiritual wellness products",
-  //   img: "/static/designs/modern-app-design.png",
-  //   link: "https://dribbble.com/shots/15485626-Modern-App-Design",
-  // },
+  {
+    label: "Ask Jhansi",
+    category: "E-commerce Multi store",
+    description: "This is a modular Next.js e-commerce application featuring multi-role support, reusable components, integrated payment solutions, and scalable state management with Zustand.",
+    img: "/static/designs/askjhansi.png",
+    link: "https://v3-dryrun.askjhansi.com/",
+  },
   // {
   //   label: "Elevatify",
   //   category: "Business Platform",
