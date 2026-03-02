@@ -10,9 +10,9 @@ export const designs: Design[] = [
   {
     label: "Anigas Attire",
     category: "E-commerce Fashion",
-    description: "Leading modeling agency in Tamil Nadu breaking stereotypes in fashion",
-    img: "/static/designs/mobile-shopping-app.jpg",
-    link: "https://dribbble.com/shots/9458498-Mobile-Shopping-App",
+    description: "Anigas Attire is a modern fashion web app built with Next.js.It features Docker deployment and a scalable architecture.",
+    img: "/static/designs/anigasattire.png",
+    link: "https://anigasattire.kavint.tech/",
   },
   // {
   //   label: "Healing Crystals",
