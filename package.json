@@ -9,9 +9,10 @@
   "dependencies": {
     "@mapbox/rehype-prism": "^0.8.0",
     "@tailwindcss/forms": "^0.5.2",
+    "@types/minimatch": "^5.1.2",
     "@types/react": "17.0.39",
     "@types/react-dom": "17.0.19",
-    "@types/minimatch": "^5.1.2",
+    "@vercel/speed-insights": "^0.0.7",
     "baseline-browser-mapping": "^2.9.19",
     "caniuse-lite": "^1.0.30001769",
     "contentlayer": "^0.1.0",
