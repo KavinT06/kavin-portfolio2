@@ -3,6 +3,15 @@ import { Project } from "types";
 
 const projects: Project[] = [
   {
+    id: 9,
+    title: "Itinera - An AI Powered Itinerary Platform",
+    desc: "Planning a trip takes hours of research across blogs, maps and review sites. Itinera turns a destination and dates into a ready-to-use day-by-day itinerary in seconds.",
+    img: "/static/projects/itineraryy.png",
+    link: "https://superitineraryapp.vercel.app/",
+    github: "https://github.com/KavinT06/Itinerary-App",
+    tags: ["NextJS", "Groq API","AI-Powered"],
+  },
+  {
     id: 0,
     title: "Quiz App",
     desc: "A fun and interactive quiz app that tests your knowledge across various topics with real-time scoring and challenges.",
@@ -37,23 +46,24 @@ const projects: Project[] = [
     link: "https://super-todo-app.vercel.app/",
     github: "https://github.com/KavinT06/TodoApp",
     tags: ["React", "TailwindCSS", "materialUI"],
-  },{
-    id: 4,
-    title: "Studio Sample Site",
-    desc: "A modern agency website design featuring structured layouts, strong branding, and conversion-focused sections to clearly showcase services, portfolio, and client engagement.",
-    img: "/static/projects/studio.png",
-    link: "https://webiontask.vercel.app/",
-    github: "https://github.com/KavinT06/webion-task",
-    tags: ["React", "NextJS", "TailwindCSS"],
   },
   {
-    id: 5,
+    id: 4,
     title: "Nexcent Clone",
     desc: "A modern community-management platform that helps organizations streamline memberships, events, and engagement in one place.",
     img: "/static/projects/nexcent.png",
     link: "https://nexcenttclone.vercel.app/",
     github: "https://github.com/KavinT06/Nextgen-clone",
     tags: ["nextjs", "tailwindcss", "react"],
+  },
+  {
+    id: 5,
+    title: "Studio Sample Site",
+    desc: "A modern agency website design featuring structured layouts, strong branding, and conversion-focused sections to clearly showcase services, portfolio, and client engagement.",
+    img: "/static/projects/studio.png",
+    link: "https://webiontask.vercel.app/",
+    github: "https://github.com/KavinT06/webion-task",
+    tags: ["React", "NextJS", "TailwindCSS"],
   },
   {
     id: 6,
@@ -78,15 +88,6 @@ const projects: Project[] = [
     github: "https://github.com/KavinT06/ailaysa-fe",
     link: "https://ailaysastore.vercel.app/login",
     tags: ["NextJS", "TailwindCSS"],
-  },
-  {
-    id: 9,
-    title: "Itinerary app",
-    desc: "Under Construction!, App will release soon. More details checkout now!",
-    img: "/static/projects/itinerary.jpg",
-    link: "https://superitineraryapp.vercel.app/",
-    github: "https://github.com/KavinT06/Itinerary-App",
-    tags: ["Javascript", "NPM"],
   },
 ];
 

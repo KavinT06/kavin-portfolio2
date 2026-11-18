@@ -118,7 +118,7 @@ function Footer() {
           <div className="mt-2 text-xs ">
             Made by{" "}
             <a
-              href="mailto:contact@braydentw.io"
+              href="mailto:itskavin47@gmail.com"
               className="text-fun-gray-light font-medium"
             >
               Kavin T

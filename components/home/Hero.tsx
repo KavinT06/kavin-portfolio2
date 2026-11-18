@@ -13,7 +13,7 @@ function Hero() {
         <h1 className="heroTitle inline-block max-w-2xl md:max-w-4xl lg:max-w-4xl w-auto relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:tracking-tighter mb-8 sm:mb-10 font-bold heroShinyBg">
           I enjoy <span className="heroShiny1 text-fun-pink">building</span> and{" "}
           <span className="heroShiny2 text-fun-pink">designing</span> for the
-          web.
+          web and android.
           <img
             className="sqD squiggle-hero-html w-16 top-[-90px] right-[5%] sm:top-[-90px] sm:right-[170px]"
             style={{ animationDelay: "0.1s" }}

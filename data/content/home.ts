@@ -31,10 +31,26 @@ type Experience = {
 
 
 export const skills: Skill[] = [
-  {
+    {
     title: "NextJS",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
     // style: { filter: "invert(1)" },
+  },
+  {
+    title: "Android",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg",
+  },
+  {
+    title: "Android Studio",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg",
+  },
+  {
+    title: "Kotlin",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+  },
+  {
+    title: "XML",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xml/xml-original.svg",
   },
   {
     title: "Material UI",
@@ -106,7 +122,7 @@ export const skills: Skill[] = [
     title: "Figma",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
   },
-  
+
 ];
 
 export const testimonials: Testimonial[] = [
