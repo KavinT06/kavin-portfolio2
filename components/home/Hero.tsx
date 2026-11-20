@@ -6,14 +6,14 @@ function Hero() {
     <>
       <div
         id="home"
-        className="relative heroElem w-full pt-16 sm:pt-20 md:pt-24 pb-32 sm:pb-40 md:pb-44 m-auto flex justify-center text-center flex-col items-center z-1"
+        className="relative heroElem w-full pt-6 sm:pt-8 md:pt-10 pb-28 sm:pb-28 md:pb-30 m-auto flex justify-center text-center flex-col items-center z-1"
         style={{ maxWidth: "1200px" }}
       >
         <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-5">Hey, I'm Kavin.</p>
         <h1 className="heroTitle inline-block max-w-2xl md:max-w-4xl lg:max-w-4xl w-auto relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight sm:tracking-tighter mb-8 sm:mb-10 font-bold heroShinyBg">
           I enjoy <span className="heroShiny1 text-fun-pink">building</span> and{" "}
-          <span className="heroShiny2 text-fun-pink">designing</span> for the
-          web and android.
+          <span className="heroShiny2 text-fun-pink">designing</span> for the apps &
+          web.
           <img
             className="sqD squiggle-hero-html w-16 top-[-90px] right-[5%] sm:top-[-90px] sm:right-[170px]"
             style={{ animationDelay: "0.1s" }}
